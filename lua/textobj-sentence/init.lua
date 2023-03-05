@@ -39,10 +39,10 @@ function M.setup(opts)
 	-- obtain the individual quote characters
 	local d_arg = vim.fn.split(double_pair, [[\zs]])
 	local s_arg = vim.fn.split(single_pair, [[\zs]])
-	vim.b.textobj_sentence_quote_dl = d_arg[0]
-	vim.b.textobj_sentence_quote_dr = d_arg[1]
-	vim.b.textobj_sentence_quote_sl = s_arg[0]
-	vim.b.textobj_sentence_quote_sr = s_arg[1]
+	vim.b.textobj_sentence_quote_dl = d_arg[1]
+	vim.b.textobj_sentence_quote_dr = d_arg[2]
+	vim.b.textobj_sentence_quote_sl = s_arg[1]
+	vim.b.textobj_sentence_quote_sr = s_arg[2]
 
 	local quotes_std = '"*_'
 	local leading = [[(\[]] .. quotes_std .. vim.b.textobj_sentence_quote_sl .. vim.b.textobj_sentence_quote_dl

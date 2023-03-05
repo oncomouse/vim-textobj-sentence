@@ -6,31 +6,31 @@
 -- License:     The MIT License (MIT)
 -- ============================================================================
 
-if not vim.fn.exists("g:textobj#sentence#select") then
+if not vim.g["textobj#sentence#select"] then
 	vim.g["textobj#sentence#select"] = "s"
 end
 
-if not vim.fn.exists("g:textobj#sentence#move_p") then
+if not vim.g["textobj#sentence#move_p"] then
 	vim.g["textobj#sentence#move_p"] = "("
 end
 
-if not vim.fn.exists("g:textobj#sentence#move_n") then
+if not vim.g["textobj#sentence#move_n"] then
 	vim.g["textobj#sentence#move_n"] = ")"
 end
 
 vim.g["textobj#sentence#doubleStandard"] = "“”"
 vim.g["textobj#sentence#singleStandard"] = "‘’"
 
-if not vim.fn.exists("g:textobj#sentence#doubleDefault") then
+if not vim.g["textobj#sentence#doubleDefault"] then
 	--  “double”
 	vim.g["textobj#sentence#doubleDefault"] = vim.g["textobj#sentence#doubleStandard"]
 end
-if not vim.fn.exists("g:textobj#sentence#singleDefault") then
+if not vim.g["textobj#sentence#singleDefault"] then
 	--  ‘single’
 	vim.g["textobj#sentence#singleDefault"] = vim.g["textobj#sentence#singleStandard"]
 end
 
-if not vim.fn.exists("g:textobj#sentence#abbreviations") then
+if not vim.g["textobj#sentence#abbreviations"] then
 	vim.g["textobj#sentence#abbreviations"] = {
 		"[ABCDIMPSUabcdegimpsv]",
 		"l[ab]",
