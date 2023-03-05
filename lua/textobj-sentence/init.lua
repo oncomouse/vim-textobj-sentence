@@ -74,7 +74,7 @@ function M.setup(opts)
 	local re_sentence_term = "(" .. re_term .. [[|\ze(\s*\n\s*\n\s*|\_s*%$))]]
 
 	-- the 'inner' pattern
-	vim.b.textobj_sentence_re_i = "\v" .. re_negative_lookback .. re_sentence_body .. re_sentence_term
+	vim.b.textobj_sentence_re_i = [[\v]] .. re_negative_lookback .. re_sentence_body .. re_sentence_term
 
 	-- include all whitespace to end of line
 	vim.b.textobj_sentence_re_a = vim.b.textobj_sentence_re_i .. [[\s*]]
