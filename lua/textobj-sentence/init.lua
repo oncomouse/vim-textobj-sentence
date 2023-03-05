@@ -11,7 +11,14 @@ local M = {}
 local function select(pattern)
 	vim.fn.search(pattern, "bc")
 	local start = vim.fn.getpos(".")
-	vim.fn.search(pattern, "ce")
+	local times = 1
+	vim.fn.search(vim.b.textobj_sentence_re_i, "ceW", 0, 0, function()
+		if times == vim.v.count1 then
+			return 0
+		end
+		times = times + 1
+		return 1
+	end)
 	local ed = vim.fn.getpos(".")
 	return { "v", start, ed }
 end
